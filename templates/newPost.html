@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+    
+    <section id="testimonials" class=" py-4 text-center ">
+      
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-12">
+
+            <div class="testimonials-content">
+              
+                    <div class="top-top">
+                    <div class="row d-flex justify-content-between">
+                       <h2 class='ml-3'>Ask A Question</h2>
+                    </div>
+                    <hr>
+                    <div class='row d-flex justify-content-center'>
+                      <div class='col-sm-12'>
+                        <form method='post' action=''> {% csrf_token %}
+                          <div class="form-group">
+                          <input type="text" name="comment" class="form-control" name="post" placeholder="Enter Your Question" />
+                          <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                          <div class="validate"></div>
+                        </form>
+                      </div>
+                      </div>
+                    </div>
+                    
+          </div>
+
+        </div>
+      </div>
+      
+    </section>
+{% endblock content %}

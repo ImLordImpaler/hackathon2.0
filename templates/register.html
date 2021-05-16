@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<body class="text-center">
+    <form class="form-signin mx-5" method="POST" action=""> {% csrf_token %}
+    <div class='row'>
+    {{form.username.label}}
+    {{form.username}}
+    </div>
+    <div class='row'>
+
+    {{form.password1.label}}
+    {{form.password1}}
+    </div>
+    <div class='row'>
+    {{form.password2.label}}
+     {{form.password2}}
+     </div>
+    <button type="submit" class='btn btn-danger mt-2'>Register </button>
+</form>
+</body>
+
+{% endblock content %}
+
+

@@ -1,0 +1,28 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+<body class="text-center">
+    <form class="form-signin mx-5" method="post" action=""> {% csrf_token %}
+  <img class="mb-4" src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cc/Chelsea_FC.svg/1200px-Chelsea_FC.svg.png" alt="" width="72" height="72">
+  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <label for="inputEmail" class="sr-only">Username</label>
+  <input type="text" name='uname' id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" name='passwd' id="inputPassword" class="form-control mt-2" placeholder="Password" required>
+  
+  <button class="btn btn-lg btn-primary btn-block my-3" type="submit">Sign in</button>
+ <div class="checkbox m-3">
+     <label>
+      <p class='display-5 mt-2'>Just for once...</p>
+    </label>
+  </div>
+  <div class='row'>
+    <a href="{% url 'register' %}" class='btn btn-outline-danger btn-sm'>Register? </a>
+  </div>
+  <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+</form>
+</body>
+
+{% endblock content %}
+
+

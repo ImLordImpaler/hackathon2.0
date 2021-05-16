@@ -1,0 +1,92 @@
+{% extends 'basic.html' %}
+{% load static %}
+{% block content %}
+
+    <section id="testimonials" class=" py-4 text-center my-5">
+      
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+
+          <div class="col-md-12">
+
+            <div class="testimonials-content">
+              
+                    <div class="top-top">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-sm-6 d-flex">
+                            <img src="{% static 'assets/img/team/1.jpg' %}" width="75" height="75" class="img-responsive" alt="img">
+                            <h4 class='align-items-center ml-4'> {{post.user.username}}</h4>
+                        </div>
+                        <div class='col-sm-6'>
+                            <a href="" class='btn btn-success'>Follow </a>  
+                        </div>
+                      
+                    </div>
+                    <hr>
+                    <div class="row">
+                        
+                        <h3><span style="font-size:xxx-large;">Q.</span> {{post.txt}}</h3>
+                      
+
+                    </div>
+                    <hr>
+                    <div class='row d-flex justify-content-start'>
+                      <a href="" class='btn btn-danger ml-3'><i class="fas fa-thumbs-up fa-2x"></i></a>
+                    </div>
+                    <hr>
+                    
+                     <div class='row d-flex justify-content-center'>
+                      <div class='col-sm-10'>
+                        <form method='post' action=''> {% csrf_token %}
+                          <div class="form-group">
+                          <input type="text" name="comment" class="form-control"  placeholder="Your Answer" />
+                          <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                          <div class="validate"></div>
+                        </form>
+                      </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class='row d-flex justify-content-center'>
+                      <h3 class='underline my-1'>Answers:</h3>
+                    </div>
+                    {% for i in comments %}
+                      <div class="row d-flex justify-content-center my-2 ">
+                          
+                          <div class="col-md-9 col-lg-9" data-aos="zoom-in" data-aos-delay="100">
+                            
+                            <div class="feature-block p-3 border">
+
+                              <div class="row d-flex justify-content-between">
+                                  <div class="col-sm-6 d-flex">
+                                      <img src="{% static 'assets/img/team/1.jpg' %}" width="75" height="75" class="img-responsive" alt="img">
+                                      <h4 class='align-items-center ml-4'> {{i.user.username}}</h4>
+                                  </div>
+                                  <div class='col-sm-6'>
+                                      <a href="" class='btn btn-sm btn-info'>Follow </a>  
+                                  </div>
+                                
+                              </div>
+                              <hr>
+                              <div class="row d-flex justify-content-between">
+                                  <div class="col-sm-6 d-flex">
+                                      <h5><span style="font-size:xx-large;">A.</span> {{i.text}}</h5>
+                        
+                                  </div>
+                                
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    {% endfor %}
+                              
+
+
+          </div>
+
+        </div>
+      </div>
+      
+    </section>
+        
+{% endblock content %}
